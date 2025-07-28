@@ -1,0 +1,6 @@
+jobmanager.rpc.address: jobmanager  # 关键：JobManager 服务名，用于 TaskManager 通信
+taskmanager.numberOfTaskSlots: 2    # TaskManager 的 Slot 数量
+jobmanager.memory.process.size: 2048m  # 设置总内存为 2GB
+taskmanager.memory.process.size: 2048m  # 必须显式定义blob.server.port: 6124
+query.server.port: 6125
+blob.server.port: 6124

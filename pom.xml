@@ -23,13 +23,16 @@ under the License.
 	<groupId>com.ververica</groupId>
 	<artifactId>flink-mobile-data-usage</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>Flink Mobile Data Usage</name>
+	<modules>
+		<module>FlinkHelloWorld</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<flink.version>1.14.3</flink.version>
+		<flink.version>1.17.0</flink.version>
 		<target.java.version>1.8</target.java.version>
 		<scala.binary.version>2.12</scala.binary.version>
 		<maven.compiler.source>${target.java.version}</maven.compiler.source>

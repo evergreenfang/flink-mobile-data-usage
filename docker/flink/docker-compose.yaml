@@ -1,0 +1,27 @@
+services:
+        jobmanager:
+                image: flink:1.17.1
+                container_name: jobmanager
+                ports:
+                        - "8081:8081"  # Web UI 端口
+                        - "6123:6123"  # RPC 通信端口
+                volumes:
+                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
+                command: jobmanager
+                networks:
+                        - flink-net
+
+        taskmanager:
+                image: flink:1.17.1
+                container_name: taskmanager
+                depends_on:
+                        - jobmanager
+                volumes:
+                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
+                command: taskmanager
+                networks:
+                        - flink-net
+
+networks:
+        flink-net:  # 自定义网络确保容器互通
+                driver: bridge

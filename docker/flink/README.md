@@ -1,0 +1,1 @@
+./bin/flink run examples/streaming/WordCount.jar
