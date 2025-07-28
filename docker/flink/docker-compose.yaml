@@ -6,7 +6,7 @@ services:
                         - "8081:8081"  # Web UI 端口
                         - "6123:6123"  # RPC 通信端口
                 volumes:
-                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
+                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml:ro
                 command: jobmanager
                 networks:
                         - flink-net
@@ -17,7 +17,7 @@ services:
                 depends_on:
                         - jobmanager
                 volumes:
-                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
+                        - ./flink-conf.yaml:/opt/flink/conf/flink-conf.yaml:ro
                 command: taskmanager
                 networks:
                         - flink-net
